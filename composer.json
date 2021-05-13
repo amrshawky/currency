@@ -1,0 +1,39 @@
+{
+    "name": "amrshawky/currency",
+    "description": "A PHP library for current and historical currency exchange rates & crypto exchange rates based on the free API provided by exchangerate.host",
+    "keywords": [
+        "php",
+        "currency",
+        "currency converter",
+        "exchange rates",
+        "crypto exchange rates"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amr Shawky",
+            "homepage": "https://amrshawky.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": ">=6.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AmrShawky\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AmrShawky\\Tests\\": "tests"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
