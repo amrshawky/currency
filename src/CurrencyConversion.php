@@ -41,7 +41,7 @@ class CurrencyConversion extends API
     /**
      * @var float
      */
-    private $amount = 1.00;
+    private $amount;
 
     /**
      * @var array
@@ -71,9 +71,12 @@ class CurrencyConversion extends API
 
             $params = [
                 'from'   => $this->from,
-                'to'     => $this->to,
-                'amount' => $this->amount
+                'to'     => $this->to
             ];
+
+            if ($this->amount) {
+                $params['amount'] = $this->amount;
+            }
 
             if ($this->places) {
                 $params['places'] = $this->places;
