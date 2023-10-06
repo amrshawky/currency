@@ -13,10 +13,11 @@ class CurrencyTimeSeriesRates extends CurrencyRates
      * @param string      $end_date
      * @param Client|null $client
      */
-    public function __construct(string $start_date, string $end_date, ?Client $client = null)
+    public function __construct(string $start_date, string $end_date, ?Client $client = null, $config = [])
     {
-        parent::__construct($client);
-        $this->base_url = "https://api.exchangerate.host/timeseries";
+        parent::__construct($client, $config);
+        $this->base_url = "https://api.exchangerate.host";
+        $this->path = "/timeseries";
         $this->params['start_date'] = $start_date;
         $this->params['end_date']   = $end_date;
     }

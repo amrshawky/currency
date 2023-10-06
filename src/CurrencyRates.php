@@ -42,9 +42,9 @@ class CurrencyRates extends API
      *
      * @param Client|null $client
      */
-    public function __construct(?Client $client = null)
+    public function __construct(?Client $client = null, $config = [])
     {
-        parent::__construct($client);
+        parent::__construct($client, $config);
 
         $this->setQueryParams(function () {
             $params = ['amount' => $this->amount];
