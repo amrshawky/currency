@@ -78,7 +78,6 @@ class CurrencyConversion extends API
                 'from'   => $this->from,
                 'to'     => $this->to,
                 'amount' => $this->amount,
-                'access_key' => env('API_EXCHANGE_API_KEY'),
             ];
 
             if ($this->places) {
