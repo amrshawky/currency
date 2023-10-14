@@ -1,7 +1,7 @@
 # Currency
 ![Tests](https://github.com/amrshawky/currency/workflows/Tests/badge.svg?branch=master) ![Packagist License](https://img.shields.io/packagist/l/amrshawky/currency?color=success&label=License) ![Packagist Version](https://img.shields.io/packagist/v/amrshawky/currency?label=Packagist) ![Packagist Downloads](https://img.shields.io/packagist/dt/amrshawky/currency?color=success&label=Downloads)
 
-> **Update: exchangerate.host now requires API key, a new version will be released soon to support API keys**
+> **This package is not maintained anymore.**
 
 Currency is a simple PHP library for current and historical currency exchange rates & crypto exchange rates. based on the free API [exchangerate.host](https://exchangerate.host "exchangerate.host Homepage") - no API keys needed!
 
