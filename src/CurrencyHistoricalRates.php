@@ -12,9 +12,10 @@ class CurrencyHistoricalRates extends CurrencyRates
      * @param string      $date
      * @param Client|null $client
      */
-    public function __construct(string $date, ?Client $client = null)
+    public function __construct(string $date, ?Client $client = null, $config = [])
     {
-        parent::__construct($client);
-        $this->base_url = "https://api.exchangerate.host/{$date}";
+        parent::__construct($client, $config);
+        $this->base_url = "https://api.exchangerate.host";
+        $this->path= "/{$date}";
     }
 }

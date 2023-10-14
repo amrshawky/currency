@@ -17,7 +17,12 @@ class CurrencyConversion extends API
     /**
      * @var string
      */
-    protected $base_url  = 'https://api.exchangerate.host/convert';
+    protected $base_url  = 'https://api.exchangerate.host';
+
+    /**
+     * @var string
+     */
+    protected $path  = '/convert';
 
     /**
      * Required base currency
@@ -56,9 +61,9 @@ class CurrencyConversion extends API
      *
      * @param Client|null $client
      */
-    public function __construct(?Client $client = null)
+    public function __construct(?Client $client = null, $config = [])
     {
-        parent::__construct($client);
+        parent::__construct($client, $config);
 
         $this->setQueryParams(function () {
             if (!$this->from) {
@@ -72,7 +77,7 @@ class CurrencyConversion extends API
             $params = [
                 'from'   => $this->from,
                 'to'     => $this->to,
-                'amount' => $this->amount
+                'amount' => $this->amount,
             ];
 
             if ($this->places) {

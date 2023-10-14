@@ -16,6 +16,16 @@ abstract class API
     protected $base_url  = null;
 
     /**
+     * @var null
+     */
+    protected $path  = null;
+
+    /**
+     * @var null
+     */
+    protected $accessKey  = null;
+
+    /**
      * @var array
      */
     protected $query_params = [];
@@ -30,8 +40,10 @@ abstract class API
      *
      * @param Client|null $client
      */
-    public function __construct(?Client $client = null)
+    public function __construct(?Client $client = null, array $config = [])
     {
+        $this->base_url = $config['base_url'] ?? $this->base_url;
+        $this->accessKey = $config['access_key'] ?? $this->accessKey;
         $this->client = $client;
     }
 
@@ -57,6 +69,10 @@ abstract class API
                 $this->query_params[$key] = $param;
             }
         }
+
+        if (!is_null($this->accessKey)) {
+            $this->query_params['access_key'] = $this->accessKey;
+        }
     }
 
     /**
@@ -68,7 +84,7 @@ abstract class API
         $this->buildQueryParams();
 
         $response = $this->request(
-            $this->base_url,
+            $this->base_url . $this->path,
             $this->query_params
         );
 
